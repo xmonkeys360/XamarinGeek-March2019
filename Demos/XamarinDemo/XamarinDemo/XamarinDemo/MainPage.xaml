@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinDemo"
+            x:Class="XamarinDemo.MainPage">
+    <TabbedPage.BindingContext>
+        <local:ViewModel />
+    </TabbedPage.BindingContext>
+    <TabbedPage.Children>
+        <ContentPage Title="Profile">
+            <StackLayout Spacing="20" Padding="20" VerticalOptions="Center">
+                <Entry Placeholder="Username" Text="{Binding Username}"/>
+                <Entry Placeholder="Password" Text="{Binding Password}" IsPassword="true"/>
+                <local:AnimatorButton Text="Login" IsBusy="{Binding IsBusy}" Command="{Binding LoginCommand}"/>
+                <Label Text="Login Success" IsVisible="{Binding IsValidLogin}" TextColor="Red" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+        </ContentPage>
+        <ContentPage Title="Settings">
+            <Label Text="Settings Page" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+        </ContentPage>
+    </TabbedPage.Children>
+</TabbedPage>
+<!--<ContentPage  xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              x:Class="XamarinDemo.MainPage"
+              xmlns:local="clr-namespace:XamarinDemo"
+              Title="Slider Bindings Page">
+    <StackLayout>
+        <Label Text="ROTATION" 
+               BindingContext="{x:Reference Name=slider}" 
+               Rotation="{Binding Path=Value}" FontAttributes="Bold" 
+               FontSize="Large" HorizontalOptions="Center" 
+               VerticalOptions="CenterAndExpand" />
+        <local:CustomSwitch x:Name="switch" HorizontalOptions="Center" />
+        <Slider x:Name="slider" 
+                IsEnabled="{Binding IsToggled, Source={x:Reference switch}}" 
+                Maximum="360" VerticalOptions="CenterAndExpand" />
+        <Label BindingContext="{x:Reference slider}" 
+               Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
+               FontAttributes="Bold" FontSize="Large" 
+               HorizontalOptions="Center" 
+               VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+</ContentPage>-->
+
+

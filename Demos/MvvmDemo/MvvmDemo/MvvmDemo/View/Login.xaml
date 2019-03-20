@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MvvmDemo.View.Login"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <Grid  VerticalOptions="Center" >
+            <Grid.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS" Value="10,40,10,0" />
+                    <On Platform="Android" Value="10,5,10,0" />
+                </OnPlatform>
+
+            </Grid.Margin>
+
+            <StackLayout VerticalOptions="Center" Orientation="Vertical" Grid.Row="0" Grid.Column="0">
+                <Image Source="Logo.jpg" HorizontalOptions="Center" Scale="0.7"/>
+
+
+                <StackLayout Padding="0,0,0,0" HorizontalOptions="FillAndExpand" Orientation="Vertical">
+
+                    <Entry x:Name="f_name" Text="{Binding UserName}"  Placeholder="User Name"   
+                           PlaceholderColor="Default" HeightRequest="40"   
+                           Keyboard="Email"  
+                           TextColor="Default"/>
+                    <Entry x:Name="l_name" Text="{Binding Password}" Placeholder="Password"   
+                           PlaceholderColor="Default" IsPassword="True" HeightRequest="40"   
+                           TextColor="Default"/>
+
+                    <Label x:Name="res" FontSize="Medium" Text="{Binding Result}"/>
+
+                    <Button Command="{Binding SubmitBtnCMD}" Text="Submit" TextColor="White"  
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#039BE5" />
+
+                   
+                </StackLayout>
+
+
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
